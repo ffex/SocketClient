@@ -21,7 +21,8 @@ namespace SocketClient
             //Dichiarazione Variabili per comunicare con il server
             string sendString = "";
             string receivedString = "";
-            byte[] buff = new byte[128];
+            byte[] sendBuff = new byte[128];
+            byte[] recvBuff = new byte[128];
             int nReceivedBytes = 0;
             try
             {
@@ -58,17 +59,19 @@ namespace SocketClient
                 {
                     // Prendo il messaggio & condizione di uscita
                     sendString = Console.ReadLine();
+                    //dico al server di interrompersi
+                    sendBuff = Encoding.ASCII.GetBytes(sendString);
+                    client.Send(sendBuff);
+
                     if (sendString.ToUpper().Trim() == "QUIT")
                     {
-                        //dico al server di interrompersi
-                        buff = Encoding.ASCII.GetBytes(sendString);
-                        client.Send(buff);
+
                         break;
                     }
                     //Pulisco il buffer e ricevo il messaggio
-                    Array.Clear(buff, 0, buff.Length);
-                    nReceivedBytes = client.Receive(buff);
-                    receivedString = Encoding.ASCII.GetString(buff);
+                    Array.Clear(recvBuff, 0, recvBuff.Length);
+                    nReceivedBytes = client.Receive(recvBuff);
+                    receivedString = Encoding.ASCII.GetString(recvBuff);
                     Console.WriteLine("S: " + receivedString);
                 }
 
