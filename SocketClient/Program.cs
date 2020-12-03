@@ -20,10 +20,10 @@ namespace SocketClient
 
             //Dichiarazione Variabili per comunicare con il server
             string sendString = "";
-            string receivedString = "";
+            string recvString = "";
             byte[] sendBuff = new byte[128];
             byte[] recvBuff = new byte[128];
-            int nReceivedBytes = 0;
+            int recvBytes = 0;
             try
             {
                 // Settagio da Console dell'EndPoint
@@ -68,11 +68,18 @@ namespace SocketClient
 
                         break;
                     }
-                    //Pulisco il buffer e ricevo il messaggio
-                    Array.Clear(recvBuff, 0, recvBuff.Length);
-                    nReceivedBytes = client.Receive(recvBuff);
-                    receivedString = Encoding.ASCII.GetString(recvBuff);
+                    
+                    
+                    recvBytes = client.Receive(recvBuff);
+                    recvString = Encoding.ASCII.GetString(recvBuff);
                     Console.WriteLine("S: " + receivedString);
+                    
+                    //Pulisco le variabili
+                    Array.Clear(recvBuff, 0, recvBuff.Length);
+                    Array.Clear(sendBuff, 0, sendBuff.Length);
+                    recvString="";
+                    sendString="";
+                    recvBytes=0;
                 }
 
 
