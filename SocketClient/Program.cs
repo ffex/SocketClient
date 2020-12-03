@@ -33,19 +33,22 @@ namespace SocketClient
                 Console.Write("Porta del Server: ");
                 strPort = Console.ReadLine();
 
+                //provo a copiare l'ip in forma di stringa nella variabile IPAddress
                 if (!IPAddress.TryParse(strIPAddress.Trim(), out ipAddr))
                 {
-                    Console.Write("IP non valido.");
+                    Console.Write("IP non valido.");//se fallisco do il messaggio e chiudo il programma
                     return;
                 }
+                // Provo a copiare la porta in forma di stringa nella varibile intera
                 if (!int.TryParse(strPort, out nPort))
                 {
-                    Console.Write("Porta non valida.");
+                    Console.Write("Porta non valida."); //se fallisco do il messaggio e chiudo il programma
                     return;
                 }
+                // Controllo che la porta sia compresa fra 0 e 65535
                 if (nPort <= 0 || nPort >= 65535)
                 {
-                    Console.Write("Porta non valida.");
+                    Console.Write("Porta non valida."); //se fallisco do il messaggio e chiudo il programma
                     return;
                 }
                 Console.WriteLine("Endpoint: " + ipAddr.ToString() + " " + nPort);
@@ -57,21 +60,23 @@ namespace SocketClient
                 Console.WriteLine("Chatta con il server. ");
                 while (true)
                 {
-                    // Prendo il messaggio & condizione di uscita
+                    // Prendo il messaggio 
                     sendString = Console.ReadLine();
-                    //dico al server di interrompersi
+                    // invio il messaggio
                     sendBuff = Encoding.ASCII.GetBytes(sendString);
                     client.Send(sendBuff);
 
+                    //se è quit, esco dal ciclo del client (lo stesso farà il server
                     if (sendString.ToUpper().Trim() == "QUIT")
                     {
 
                         break;
                     }
                     
-                    
+                    // mi metto in ascolto del messaggio del server
                     recvBytes = client.Receive(recvBuff);
                     recvString = Encoding.ASCII.GetString(recvBuff);
+                    //lo scrivo a video
                     Console.WriteLine("S: " + recvString);
                     
                     //Pulisco le variabili
@@ -86,6 +91,7 @@ namespace SocketClient
             }
             catch (Exception ex)
             {
+                //intercetto gli errori
                 Console.WriteLine(ex.Message);
             }
             finally
