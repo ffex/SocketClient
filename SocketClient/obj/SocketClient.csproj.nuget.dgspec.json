@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\docente\\Source\\Repos\\ffex\\SocketClient\\SocketClient\\SocketClient.csproj": {}
+    "C:\\Users\\basso\\Source\\Repos\\SocketClientTest\\SocketClient\\SocketClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\docente\\Source\\Repos\\ffex\\SocketClient\\SocketClient\\SocketClient.csproj": {
+    "C:\\Users\\basso\\Source\\Repos\\SocketClientTest\\SocketClient\\SocketClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\docente\\Source\\Repos\\ffex\\SocketClient\\SocketClient\\SocketClient.csproj",
+        "projectUniqueName": "C:\\Users\\basso\\Source\\Repos\\SocketClientTest\\SocketClient\\SocketClient.csproj",
         "projectName": "SocketClient",
-        "projectPath": "C:\\Users\\docente\\Source\\Repos\\ffex\\SocketClient\\SocketClient\\SocketClient.csproj",
-        "packagesPath": "C:\\Users\\docente\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\docente\\Source\\Repos\\ffex\\SocketClient\\SocketClient\\obj\\",
+        "projectPath": "C:\\Users\\basso\\Source\\Repos\\SocketClientTest\\SocketClient\\SocketClient.csproj",
+        "packagesPath": "C:\\Users\\basso\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\basso\\Source\\Repos\\SocketClientTest\\SocketClient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\docente\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\basso\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -27,6 +27,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\basso\\Desktop\\Lavoro\\Sumo Android\\libs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -52,30 +53,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.0.1, 3.0.1]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.0.3, 3.0.3]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

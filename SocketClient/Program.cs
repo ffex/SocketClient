@@ -72,7 +72,7 @@ namespace SocketClient
                     
                     recvBytes = client.Receive(recvBuff);
                     recvString = Encoding.ASCII.GetString(recvBuff);
-                    Console.WriteLine("S: " + receivedString);
+                    Console.WriteLine("S: " + recvString);
                     
                     //Pulisco le variabili
                     Array.Clear(recvBuff, 0, recvBuff.Length);
